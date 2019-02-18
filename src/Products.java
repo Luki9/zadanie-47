@@ -1,4 +1,7 @@
-class Products {
+import java.util.Objects;
+
+class Products  {
+
 
     private String producent;
     private double price;
@@ -33,4 +36,30 @@ class Products {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Products)) return false;
+        Products products = (Products) o;
+        return Double.compare(products.price, price) == 0 &&
+                Objects.equals(producent, products.producent) &&
+                Objects.equals(name, products.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(producent, price, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "producent='" + producent + '\'' +
+                ", price=" + price +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
 }
