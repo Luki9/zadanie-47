@@ -16,7 +16,33 @@ class Main {
         bfw.write("text.csv");
         bfw.close();
 
+        File file = new File("text.csv");
+
+        Scanner scanner = new Scanner(file);
+        System.out.println(scanner.nextDouble());
+        System.out.println(scanner.nextDouble());
+        System.out.println(scanner.nextDouble());
+        System.out.println(scanner.nextLine());
+        System.out.println(scanner.nextLine());
+        System.out.println(scanner.nextLine());
+        System.out.println(scanner.nextLine());
+        try {
+            Scanner scanner2 = new Scanner(file);
+            if (scanner.hasNextLine()) {
+                String nextline = scanner.nextLine();
+                System.out.println(nextline);
+            }
+        }catch (FileNotFoundException ex){
+            ex.printStackTrace();
 
         }
+
+
+
+
+
+        }
+
+        
     }
 
